@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+
+  scratch-map:
+    container_name: scratch_map
+    build: ${PROJECTS_HOME}/scratch-map
+    ports:
+      - "8080:8080"
+#    labels:
+#      com.centurylinklabs.watchtower.enable: "true"
+    volumes:
+      - ${PROJECTS_HOME}/scratch-map
+    networks:
+      - scratch-net
+
+
+#  watchtower:
+#    container_name: watchtower
+#    image: containrrr/watchtower
+#    environment:
+#      - WATCHTOWER_NOTIFICATIONS = slack
+#      - WATCHTOWER_NOTIFICATION_SLACK_HOOK_URL = "https://hooks.slack.com/services/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"
+#      - WATCHTOWER_NOTIFICATION_SLACK_IDENTIFIER = watchtower-server-1
+#    labels:
+#      com.centurylinklabs.watchtower.enable: "true"
+#    volumes:
+#      - /var/run/docker.sock:/var/run/docker.sock
+#    command: --interval 300 --no-pull --monitor-only --label-enable
+#    networks:
+#      - scratch-net
+
+networks:
+  scratch-net:
+    driver: bridge
