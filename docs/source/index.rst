@@ -6,14 +6,29 @@
 Welcome to scratch-map's documentation!
 =======================================
 
+Project documentation
+#####################
+
+This is the documentation that describes our project and working practices
+
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+   :glob:
+
+   project_info/*
 
 
+App documentation
+#################
+
+This is the documentation that describes our application and the tools we use
+
+.. toctree::
+   :glob:
+
+   app_info/*
 
 Indices and tables
-==================
+##################
 
 * :ref:`genindex`
 * :ref:`modindex`
