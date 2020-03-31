@@ -25,7 +25,7 @@ This is the documentation that describes our application and the tools we use
 .. toctree::
    :glob:
 
-   app_info/*
+   app_info/design/index
 
 Indices and tables
 ##################
