@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+
+  scratch-map:
+    container_name: scratch_map
+    build: ${PROJECTS_HOME}/scratch-map
+    ports:
+      - "8080:8080"
+    volumes:
+      - ${PROJECTS_HOME}/scratch-map
+    networks:
+      - scratch-net
+
+networks:
+  scratch-net:
+    driver: bridge
