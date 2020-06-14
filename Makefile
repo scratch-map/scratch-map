@@ -1,3 +1,6 @@
+install:
+    pipenv install
+
 lint:
 	pipenv run flake8
 	pipenv check ./scratch-map ./tests
