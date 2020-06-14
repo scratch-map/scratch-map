@@ -1,9 +1,11 @@
-# Definitions
+Definitions
+===========
 
 Below are a list of definitions used within the project.
 
 
-## Definition of Ready
+Definition of Ready
+###################
 
 This definition of ready should be taken with a pinch of salt. It's not a set list of requirements, it's about things to consider whether an issue/card can be worked on with minimal 'admin' effort and focus can be solely on the research/development.
 
@@ -16,7 +18,8 @@ This definition of ready should be taken with a pinch of salt. It's not a set li
 - **Steps to work through?**
 
 
-## Definition of Done
+Definition of Done
+##################
 
 This definition of done can be considered a guideline to what we 'should' have completed by actioning on a ticket.
 
