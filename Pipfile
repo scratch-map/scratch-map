@@ -4,14 +4,14 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-flask = "1.1.2"
-structlog = "20.1.0"
-pre-commit = "2.5.1"
-black = "19.10b0"
+flask = "==1.1.2"
+structlog = "==20.1.0"
+pre-commit = "==2.5.1"
+black = "==19.10b0"
 
 [dev-packages]
-flake8 = "3.8.3"
-pytest = "5.4.3"
+flake8 = "==3.8.3"
+pytest = "==5.4.3"
 
 [requires]
 python_version = "3.8"

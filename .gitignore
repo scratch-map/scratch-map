@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 .idea
-=======
 node_modules/
-.idea
 allure-results
 coverage
 docs
@@ -33,4 +30,3 @@ coverage.xml
 # virtualenv
 venv/
 ENV/
->>>>>>> 3c114fadf53ae4f1d140690d7c53968b38146f22
