@@ -1,5 +1,5 @@
 install:
-    pipenv install
+	pipenv install
 
 lint:
 	pipenv run flake8
@@ -13,4 +13,3 @@ start:
 
 build:
 	docker-compose build
-
