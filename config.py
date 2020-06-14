@@ -7,7 +7,7 @@ class Config(object):
     PORT = os.getenv("PORT", 8080)
     LOGGING_LEVEL = os.getenv("LOGGING_LEVEL", "INFO")
 
-    SECRET_KEY = os.getenv('SECRET_KEY', 'test')
+    SECRET_KEY = os.getenv("SECRET_KEY", "test")
 
 
 class DevelopmentConfig(Config):

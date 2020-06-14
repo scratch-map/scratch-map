@@ -13,6 +13,7 @@ __pycache__/
 env/
 build/
 .idea/
+.pytest_cache
 
 # Sphinx documentation
 docs/_build/

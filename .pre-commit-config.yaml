@@ -8,7 +8,6 @@ repos:
     -   id: check-json
     -   id: check-yaml
     -   id: requirements-txt-fixer
-    -   id: double-quote-string-fixer
 -   repo: https://gitlab.com/pycqa/flake8
     rev: 3.7.9
     hooks:
