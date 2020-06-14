@@ -1,0 +1,32 @@
+node_modules/
+.idea
+allure-results
+coverage
+docs
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+.DS_Store
+
+# Distribution / packaging
+.Python
+env/
+build/
+.idea/
+
+# Sphinx documentation
+docs/_build/
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*,cover
+
+# virtualenv
+venv/
+ENV/
