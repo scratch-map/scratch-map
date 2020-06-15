@@ -4,7 +4,7 @@ python:
 - "3.8"
 
 install:
-- make install
+- make install-dev
 
 script:
 - make test
