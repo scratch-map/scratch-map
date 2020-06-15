@@ -1,5 +1,5 @@
-node_modules/
 .idea
+node_modules/
 allure-results
 coverage
 docs
@@ -13,6 +13,7 @@ __pycache__/
 env/
 build/
 .idea/
+.pytest_cache
 
 # Sphinx documentation
 docs/_build/
