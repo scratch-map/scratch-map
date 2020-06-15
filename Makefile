@@ -1,3 +1,7 @@
+init:
+	pip install pipenv --upgrade
+	pipenv install --dev
+
 install-dev:
 	pipenv install --dev
 
