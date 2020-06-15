@@ -1,3 +1,6 @@
+install-dev:
+	pipenv install --dev
+
 install:
 	pipenv install
 
