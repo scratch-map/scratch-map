@@ -1,7 +1,7 @@
 
 # Scratch Map
 
-Build tools along here (code coverage / ci)
+[![Build Status](https://travis-ci.org/scratch-map/scratch-map.svg?branch=master)](https://travis-ci.org/scratch-map/scratch-map)
 
 Small description of the project and link to documentation
 **[Documentation](https://github.com/dcdarrell9/scratch-map/blob/master/docs/index.md)**
