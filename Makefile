@@ -1,6 +1,16 @@
 SONAR_TOKEN?=
 GIT_BRANCH=$(shell git rev-parse --abbrev-ref HEAD)
 
+init:
+	pip install pipenv --upgrade
+	pipenv install --dev
+
+install-dev:
+	pipenv install --dev
+
+install:
+	pipenv install
+
 lint:
 	pipenv run flake8
 	pipenv check ./scratch-map ./tests

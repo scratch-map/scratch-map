@@ -1,6 +1,7 @@
 
 # Scratch Map
 
+[![Build Status](https://travis-ci.org/scratch-map/scratch-map.svg?branch=master)](https://travis-ci.org/scratch-map/scratch-map)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=scratch-map_scratch-map&metric=alert_status)](https://sonarcloud.io/dashboard?id=scratch-map_scratch-map)
 
 Build tools along here (code coverage / ci)
