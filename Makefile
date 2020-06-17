@@ -4,6 +4,7 @@ GIT_BRANCH?=$(shell git rev-parse --abbrev-ref HEAD)
 init:
 	pip install pipenv --upgrade
 	pipenv install --dev
+	pre-commit install
 
 install-dev:
 	pipenv install --dev
