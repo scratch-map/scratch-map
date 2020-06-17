@@ -14,4 +14,8 @@ jobs:
     - stage: test
       script: make test
     - stage: sonar scan
+      install:
+        - wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.2.0.1873-linux.zip -O /tmp/sonar.zip
+        - unzip /tmp/sonar.zip
+        - export PATH=$PATH:$PWD/sonar-scanner-4.2.0.1873-linux/bin/
       script: make sonarscan
