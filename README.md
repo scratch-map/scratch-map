@@ -1,6 +1,8 @@
 
 # Scratch Map
 
+[![Generic badge](https://img.shields.io/badge/Snyk-Active-green.svg)](https://app.snyk.io/org/scratch-map/project/f06fd786-bdfb-43ac-bdf6-70aacb8fd29a)
+
 Build tools along here (code coverage / ci)
 
 Small description of the project and link to documentation
