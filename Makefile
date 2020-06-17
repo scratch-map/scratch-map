@@ -1,5 +1,5 @@
 SONAR_TOKEN?=
-GIT_BRANCH=$(shell git rev-parse --abbrev-ref HEAD)
+GIT_BRANCH?=$(shell git rev-parse --abbrev-ref HEAD)
 
 init:
 	pip install pipenv --upgrade
