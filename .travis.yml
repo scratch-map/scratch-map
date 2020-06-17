@@ -6,9 +6,6 @@ python:
 install:
   - make
 
-addons:
-  sonarcloud:
-
 jobs:
   include:
     - stage: test
@@ -18,4 +15,6 @@ jobs:
         - wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.2.0.1873-linux.zip -O /tmp/sonar.zip
         - unzip /tmp/sonar.zip
         - export PATH=$PATH:$PWD/sonar-scanner-4.2.0.1873-linux/bin/
+      env:
+        - GIT_BRANCH=$TRAVIS_BRANCH
       script: make sonarscan
