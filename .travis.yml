@@ -8,9 +8,6 @@ install:
 
 addons:
   sonarcloud:
-    organization: "scratch-map"
-    token:
-      secure: "zlZmXPvMe38QnZWIzWnnEcV5SlIdXxUdlAB4PXow9F/lgxqjNOQoV8MaKEBx1B3Vs5T5CvrhZSrsbkBM9OuUKmkiE+0LmycZLntHi6n+dGxLGcJewQ8itjsHwXheiRBD1CBQ/LDCO2D6XxG48nLFag5oOEHQ+9hN6xhN7owrf9hfvoH5Ja7ig0n6/y0vySmXqGXaDm72vtgIccX11kMmT/xFVPzxSSG+kxRHV7XUo/RtdCYqtaqsn+JhRT40I9gqIVlfC+TpWOVKb9xK/uaO1CZ+uXnOVZZ3nzNBN1ojq6G7Ngx/D/CCuBsEFhb2VgO8nqu6I/qz1FkvdwDyQtr2AZ8zt0TknYX5HIedH3sZTOgwB/+lP+xobjlD3Bl5cM12SYEJhKDyeN3y9S/M36z5Sq3ADqp5zJ7bNFwZJT5zigAthvHnZuUzX20PcVfHUhoeJ2goDe4o3SC+C7EkK1edfAk611YodSMH2zExbnBUIJyOqPLVo7jJOgWJOb5PuQVrUsQ1vU0hxqj9+Hd2+ykPzlOAJvF8/je7dd67QW8wUR6qmM11qNVttLA45kaLvm7LjunrQTKC6UW2a/K9RCHzYkaADZAvmcq+ZHWYQDnPjnPOhWzohKmMAErpsPM5qg4qi4L8xnRkSi3hoz9t9qthwagIU05+ZWevGR3eDbprYZ8="
 
 jobs:
   include:
