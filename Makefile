@@ -22,11 +22,11 @@ snykauth:
 	# Login to snyk
 	snyk auth $(SNYK_TOKEN)
 
-snyktest: snykauth
+snyktest: snykauth install
 	# Check the dependencies for vulnerabilities
 	snyk test --org=$(ORGANISATION)
 
-snykmonitor: snykauth
+snykmonitor: snykauth install
 	# Push the dependencies to snyk for ongoing monitoring/alerting of vulnerabilities
 	snyk monitor --org=$(ORGANISATION)
 
