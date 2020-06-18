@@ -1,6 +1,10 @@
+SONAR_TOKEN?=
+GIT_BRANCH?=$(shell git rev-parse --abbrev-ref HEAD)
+
 init:
 	pip install pipenv --upgrade
 	pipenv install --dev
+	pre-commit install
 
 install-dev:
 	pipenv install --dev
@@ -11,6 +15,15 @@ install:
 lint:
 	pipenv run flake8
 	pipenv check ./scratch-map ./tests
+
+sonarscan:
+	sonar-scanner \
+	  -Dsonar.organization=scratch-map \
+	  -Dsonar.projectKey=scratch-map_scratch-map \
+	  -Dsonar.branch.name=$(GIT_BRANCH) \
+	  -Dsonar.sources=. \
+	  -Dsonar.host.url=https://sonarcloud.io \
+	  -Dsonar.login=$(SONAR_TOKEN)
 
 test: lint
 	pipenv run python run_tests.py
