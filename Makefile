@@ -1,5 +1,7 @@
-SONAR_TOKEN?=
+ORGANISATION=scratch-map
 GIT_BRANCH?=$(shell git rev-parse --abbrev-ref HEAD)
+SNYK_TOKEN?=
+SONAR_TOKEN?=
 
 init:
 	pip install pipenv --upgrade
@@ -15,6 +17,18 @@ install:
 lint:
 	pipenv run flake8
 	pipenv check ./scratch-map ./tests
+
+snykauth:
+	# Login to snyk
+	snyk auth $(SNYK_TOKEN)
+
+snyktest: snykauth install
+	# Check the dependencies for vulnerabilities
+	snyk test --org=$(ORGANISATION)
+
+snykmonitor: snykauth install
+	# Push the dependencies to snyk for ongoing monitoring/alerting of vulnerabilities
+	snyk monitor --org=$(ORGANISATION)
 
 sonarscan:
 	sonar-scanner \

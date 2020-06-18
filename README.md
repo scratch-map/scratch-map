@@ -3,6 +3,7 @@
 
 [![Build Status](https://travis-ci.org/scratch-map/scratch-map.svg?branch=master)](https://travis-ci.org/scratch-map/scratch-map)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=scratch-map_scratch-map&metric=alert_status)](https://sonarcloud.io/dashboard?id=scratch-map_scratch-map)
+[![Generic badge](https://img.shields.io/badge/Snyk-Active-green.svg)](https://app.snyk.io/org/scratch-map/project/f06fd786-bdfb-43ac-bdf6-70aacb8fd29a)
 
 Build tools along here (code coverage / ci)
 
