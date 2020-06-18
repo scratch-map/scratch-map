@@ -11,9 +11,13 @@ jobs:
     - stage: test
       script: make test
 
-    - stage: snyk test
+    - stage: snyk
+      env:
+        - secure: "ETKv/5wM4L+2ATFnunuR4vhHGH5s+WzZohnOG94gAwbMi3+G+bUCisIdDsNoLUyKglh1VMdhaj8tG3olCHuxd+ct6XHKosOdNkUOD6JnYlDk07Ddtxto8nX6SjaeeBeL8mrZ8XU9DCkBCrTTiSth4SYlA1nDeyjRwkDuanIdNVJk4SzclQbCFWG9fMMjVnrm4Szux5OxyJHDYkpWxn3b/L/+00lJaoHP9pk1JiCWjj+RpyUYsjYF68wOx3d9KdmqstQaxYBXNJa/ZJk3YYxwLTMnTk93Y2jpmyNCW/b3u1E6obsFGVj9bG+RO3vvh3ZaTXylhy8vw92mukhFKUMV/zFgsL/w4xgUHBElQvwSdy/swVw+cb7BZb2plGKqCOu/Llxn94bTYj6PtQHOS6tuFc32T+f7o9FjiiJ12PSP79dTYjadOcIz1Ly8u2IrnC97Ud9gGSPCjcVAQHvVK+3o/Vg6APtSSr4JKQGtTMX9rf+JOKV6xUYqvUdhtA0nT5wqX40ZwXQWucU+2rzyylZHI1MSY6JhcmlNjnai14u0LCnYiSzgP0wnUREuO/TXQgepN/gQOzbygI5DundHz3FrpKvUvrti4QzRPq/hr4F8CR2odhbnsuYneCDB4nECILKwmI87eibXcRf85seOHtKAzHH4xhsRiOFv8ISKe9ACLIU="
       install: npm install -g snyk
-      script: make snyktest
+      script:
+        - make snyktest
+        - make snykmonitor
 
     - stage: sonar scan
       install:
@@ -24,9 +28,3 @@ jobs:
         - GIT_BRANCH=$TRAVIS_BRANCH
         - secure: "Ci7H2jsaCcN9xIRjuOUOesm8Az86CZUs0NOSILWgIPxNSbG9xfCEsh57zBAgLvsUjFoj0lxyl+KBLNjAbbo2S2xNpRuVDtRzdM1yXsLYpTXaSSpnLAe1eQu4036uRwDv0tnreriDSTNoxSuJpLcloqu3WngjIpfV+B6s4iPHcB+TbN3pXPuj4aLPL03fFCZy3e4fmO8poZqK0Hmqf41tbYTZsHUAwjR55SHhGjEfLv+O59VuoP0qktgzvtfTz6YazeSTYn4Q1qYn9Yid/kxR7d6e1maR0G2rUek+qX/F/FNH9gg2Rc0JKQZi9PBbqwlpNE+WnMiJAZvj/qsZK/uTOmSqorx68hiHmHI5amimPCnne6HnrrvpS3PkBGhGRk63QQchPLnkqqw3cL6K44JTs0LcESkYESdF+J0P8dRHLTc4ayLiNcNmZAWOsR4MPTe6rZEvqYA0ZXqpxfkHeyYuWTMwNQEXGU7k4StyI7ODfablNsPrngH5MHhF67IlTjrdFFhNpKd1t4hzYJq8UMeXNaJtBBpm8oy/urPrMV92l4+6XwQQbNx6pDgJe8xbhmWO1M4X8CeikyTwUoLz98AoUs4arUNBtDHrZP7A8gylJUQCMB96F2WAoS65k3qvZvKxY+SIaDjA/vjuKsAiTwIeE2+RKKIifcIHoSVjeqgDyg0="
       script: make sonarscan
-
-    - stage: snyk monitor
-      env:
-        - secure: "ETKv/5wM4L+2ATFnunuR4vhHGH5s+WzZohnOG94gAwbMi3+G+bUCisIdDsNoLUyKglh1VMdhaj8tG3olCHuxd+ct6XHKosOdNkUOD6JnYlDk07Ddtxto8nX6SjaeeBeL8mrZ8XU9DCkBCrTTiSth4SYlA1nDeyjRwkDuanIdNVJk4SzclQbCFWG9fMMjVnrm4Szux5OxyJHDYkpWxn3b/L/+00lJaoHP9pk1JiCWjj+RpyUYsjYF68wOx3d9KdmqstQaxYBXNJa/ZJk3YYxwLTMnTk93Y2jpmyNCW/b3u1E6obsFGVj9bG+RO3vvh3ZaTXylhy8vw92mukhFKUMV/zFgsL/w4xgUHBElQvwSdy/swVw+cb7BZb2plGKqCOu/Llxn94bTYj6PtQHOS6tuFc32T+f7o9FjiiJ12PSP79dTYjadOcIz1Ly8u2IrnC97Ud9gGSPCjcVAQHvVK+3o/Vg6APtSSr4JKQGtTMX9rf+JOKV6xUYqvUdhtA0nT5wqX40ZwXQWucU+2rzyylZHI1MSY6JhcmlNjnai14u0LCnYiSzgP0wnUREuO/TXQgepN/gQOzbygI5DundHz3FrpKvUvrti4QzRPq/hr4F8CR2odhbnsuYneCDB4nECILKwmI87eibXcRf85seOHtKAzHH4xhsRiOFv8ISKe9ACLIU="
-      install: npm install -g snyk
-      script: make snykmonitor
