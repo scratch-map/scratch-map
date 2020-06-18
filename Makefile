@@ -18,13 +18,16 @@ lint:
 	pipenv run flake8
 	pipenv check ./scratch-map ./tests
 
-snyktest:
+snykauth:
+	# Login to snyk
+	snyk auth $(SNYK_TOKEN)
+
+snyktest: snykauth
 	# Check the dependencies for vulnerabilities
 	snyk test --org=$(ORGANISATION)
 
-snykmonitor:
+snykmonitor: snykauth
 	# Push the dependencies to snyk for ongoing monitoring/alerting of vulnerabilities
-	snyk auth $(SNYK_TOKEN)
 	snyk monitor --org=$(ORGANISATION)
 
 sonarscan:
