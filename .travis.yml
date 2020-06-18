@@ -7,23 +7,25 @@ install:
   - make
 
 stages:
+  - name: Test
   - name: Snyk
-    install: npm install -g snyk
-    env:
-      - secure: "ETKv/5wM4L+2ATFnunuR4vhHGH5s+WzZohnOG94gAwbMi3+G+bUCisIdDsNoLUyKglh1VMdhaj8tG3olCHuxd+ct6XHKosOdNkUOD6JnYlDk07Ddtxto8nX6SjaeeBeL8mrZ8XU9DCkBCrTTiSth4SYlA1nDeyjRwkDuanIdNVJk4SzclQbCFWG9fMMjVnrm4Szux5OxyJHDYkpWxn3b/L/+00lJaoHP9pk1JiCWjj+RpyUYsjYF68wOx3d9KdmqstQaxYBXNJa/ZJk3YYxwLTMnTk93Y2jpmyNCW/b3u1E6obsFGVj9bG+RO3vvh3ZaTXylhy8vw92mukhFKUMV/zFgsL/w4xgUHBElQvwSdy/swVw+cb7BZb2plGKqCOu/Llxn94bTYj6PtQHOS6tuFc32T+f7o9FjiiJ12PSP79dTYjadOcIz1Ly8u2IrnC97Ud9gGSPCjcVAQHvVK+3o/Vg6APtSSr4JKQGtTMX9rf+JOKV6xUYqvUdhtA0nT5wqX40ZwXQWucU+2rzyylZHI1MSY6JhcmlNjnai14u0LCnYiSzgP0wnUREuO/TXQgepN/gQOzbygI5DundHz3FrpKvUvrti4QzRPq/hr4F8CR2odhbnsuYneCDB4nECILKwmI87eibXcRf85seOHtKAzHH4xhsRiOFv8ISKe9ACLIU="
+  - name: Sonar
 
 jobs:
   include:
-    - stage: test
+    - stage: Test
       script: make test
 
-    - stage: snyk
+    - stage: Snyk
+      install: npm install -g snyk
+      env:
+        - secure: "ETKv/5wM4L+2ATFnunuR4vhHGH5s+WzZohnOG94gAwbMi3+G+bUCisIdDsNoLUyKglh1VMdhaj8tG3olCHuxd+ct6XHKosOdNkUOD6JnYlDk07Ddtxto8nX6SjaeeBeL8mrZ8XU9DCkBCrTTiSth4SYlA1nDeyjRwkDuanIdNVJk4SzclQbCFWG9fMMjVnrm4Szux5OxyJHDYkpWxn3b/L/+00lJaoHP9pk1JiCWjj+RpyUYsjYF68wOx3d9KdmqstQaxYBXNJa/ZJk3YYxwLTMnTk93Y2jpmyNCW/b3u1E6obsFGVj9bG+RO3vvh3ZaTXylhy8vw92mukhFKUMV/zFgsL/w4xgUHBElQvwSdy/swVw+cb7BZb2plGKqCOu/Llxn94bTYj6PtQHOS6tuFc32T+f7o9FjiiJ12PSP79dTYjadOcIz1Ly8u2IrnC97Ud9gGSPCjcVAQHvVK+3o/Vg6APtSSr4JKQGtTMX9rf+JOKV6xUYqvUdhtA0nT5wqX40ZwXQWucU+2rzyylZHI1MSY6JhcmlNjnai14u0LCnYiSzgP0wnUREuO/TXQgepN/gQOzbygI5DundHz3FrpKvUvrti4QzRPq/hr4F8CR2odhbnsuYneCDB4nECILKwmI87eibXcRf85seOHtKAzHH4xhsRiOFv8ISKe9ACLIU="
       script: make snyktest
       name: Snyk Test
     - script: make snykmonitor
       name: Snyk Monitor
 
-    - stage: sonar scan
+    - stage: Sonar
       install:
         - wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.2.0.1873-linux.zip -O /tmp/sonar.zip
         - unzip /tmp/sonar.zip
