@@ -19,3 +19,13 @@ jobs:
         - GIT_BRANCH=$TRAVIS_BRANCH
         - secure: "Ci7H2jsaCcN9xIRjuOUOesm8Az86CZUs0NOSILWgIPxNSbG9xfCEsh57zBAgLvsUjFoj0lxyl+KBLNjAbbo2S2xNpRuVDtRzdM1yXsLYpTXaSSpnLAe1eQu4036uRwDv0tnreriDSTNoxSuJpLcloqu3WngjIpfV+B6s4iPHcB+TbN3pXPuj4aLPL03fFCZy3e4fmO8poZqK0Hmqf41tbYTZsHUAwjR55SHhGjEfLv+O59VuoP0qktgzvtfTz6YazeSTYn4Q1qYn9Yid/kxR7d6e1maR0G2rUek+qX/F/FNH9gg2Rc0JKQZi9PBbqwlpNE+WnMiJAZvj/qsZK/uTOmSqorx68hiHmHI5amimPCnne6HnrrvpS3PkBGhGRk63QQchPLnkqqw3cL6K44JTs0LcESkYESdF+J0P8dRHLTc4ayLiNcNmZAWOsR4MPTe6rZEvqYA0ZXqpxfkHeyYuWTMwNQEXGU7k4StyI7ODfablNsPrngH5MHhF67IlTjrdFFhNpKd1t4hzYJq8UMeXNaJtBBpm8oy/urPrMV92l4+6XwQQbNx6pDgJe8xbhmWO1M4X8CeikyTwUoLz98AoUs4arUNBtDHrZP7A8gylJUQCMB96F2WAoS65k3qvZvKxY+SIaDjA/vjuKsAiTwIeE2+RKKIifcIHoSVjeqgDyg0="
       script: make sonarscan
+    - stage: publish docs
+      env:
+        - secure: "tylPD3cW09u5noXVkcV71w1sFuUtpKo6Z2C4nWifMxRJiuzEXGs3L1+d98IY08qSbqEGcPaSfDOUmRyS7gSdDyARrWq3XkhYJAbE5eAwzpwq5eGcpguGktcOOGZHFdzI2cyIBWi8J82HIQWCX7etbpPaFZZkbCuFM4W63UUbKOzLa7p4Ve291BBXNV1VlVnY0zutWDPpiQbV4C3kj/pYS1cG/MtfOTAtqe2jzCZ3bSIg4G7dQygZR9DVYEYSlIrBGIwD91esLkOapfatqyMSJKrXW23RNtt6vMl0HASHeQSXtGw7x2/tMQSWykX9+KReNkzzvkC+GDxDif6s/tLFYaUH2ggxOYYnvHCh6GKqSXlvgH0/9A/sTJ0VHS3Dx1Qs2kjxLjO2UWAPzZIG8CHc+T1mjIgcOZMDGxmJFvf75mbU89OQwYTR2zls9sqd2WI2B4P5rqdjrWehN+gRuBCQRdQuvS5YcJZp+z4On5G1xDk71Ibb9YOUeMTD65ClROm2i6kT69DQH+NR0xm37jwz/Hmi9sJ0sLUAqPDnI60Rt4kkT1XdOm8VXn43p83XYaWr3PEb2ZoMZ1X9eV8JYcjM9neiDrtyCTOJBVgEDjMMF6vBEEWER0VtrMbC8S4fZ05BLRRrxRnTt6xpZZlhfjKBEJLnDQsCL/nu8oqEd0HXxP0="
+      script: make docs
+      deploy:
+        provider: pages
+        skip_cleanup: true
+        github_token: $GITHUB_TOKEN
+        keep_history: true
+        local_dir: ./docs/build
