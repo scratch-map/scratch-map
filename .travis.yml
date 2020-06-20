@@ -29,3 +29,6 @@ jobs:
         github_token: $GITHUB_TOKEN
         keep_history: true
         local_dir: ./docs/build
+        target_branch: gh-pages
+        on:
+          branch: docs
