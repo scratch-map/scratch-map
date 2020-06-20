@@ -33,3 +33,7 @@ start:
 
 build:
 	docker-compose build
+
+.PHONY: docs
+docs:
+	cd docs && make html
