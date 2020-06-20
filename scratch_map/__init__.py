@@ -18,7 +18,7 @@ def root():
     if request.method == "POST":
         countries.add_country(request.form["add_country"])
 
-    return render_template("index.html")
+    return render_template("index.html", country_list=countries.country_list)
 
 
 import scratch_map.views  # NOQA

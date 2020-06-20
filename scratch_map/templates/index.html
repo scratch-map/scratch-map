@@ -12,5 +12,10 @@
         <input name="add_country">
         <input type="submit">
     </form>
+
+    <h3>Countries I've been to</h3>
+    {% for item in country_list %}
+    <p>{{ item }}</p>
+    {% endfor %}
 </body>
 </html>
