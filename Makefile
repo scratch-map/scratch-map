@@ -22,11 +22,13 @@ sonarscan:
 	  -Dsonar.projectKey=scratch-map_scratch-map \
 	  -Dsonar.branch.name=$(GIT_BRANCH) \
 	  -Dsonar.sources=. \
+	  -Dsonar.python.coverage.reportPaths=coverage.xml \
 	  -Dsonar.host.url=https://sonarcloud.io \
 	  -Dsonar.login=$(SONAR_TOKEN)
 
 test: lint
-	pipenv run python run_tests.py
+	pipenv run coverage run --source scratch_map -m pytest
+	pipenv run coverage xml
 
 start:
 	docker-compose up --no-deps
