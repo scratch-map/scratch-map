@@ -23,6 +23,7 @@ sonarscan:
 	  -Dsonar.branch.name=$(GIT_BRANCH) \
 	  -Dsonar.sources=. \
 	  -Dsonar.python.coverage.reportPaths=coverage.xml \
+	  -Dsonar.coverage.exclusions=./tests,./docs \
 	  -Dsonar.host.url=https://sonarcloud.io \
 	  -Dsonar.login=$(SONAR_TOKEN)
 
