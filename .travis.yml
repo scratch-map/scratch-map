@@ -8,9 +8,7 @@ install:
 
 jobs:
   include:
-    - stage: test
-      script: make test
-    - stage: sonar scan
+    - stage: lint/test
       install:
         - wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.2.0.1873-linux.zip -O /tmp/sonar.zip
         - unzip /tmp/sonar.zip
