@@ -14,6 +14,12 @@ init:
 local:
 	pipenv run python run.py
 
+clean:
+	pipenv clean
+	rm -rf .scannerwork
+	rm -rf .pytest_cache
+	rm -rf **/.pytest_cache
+
 # Code Quality
 lint:
 	pipenv run flake8
