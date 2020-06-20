@@ -17,5 +17,6 @@ jobs:
         - GIT_BRANCH=$TRAVIS_BRANCH
         - secure: "Ci7H2jsaCcN9xIRjuOUOesm8Az86CZUs0NOSILWgIPxNSbG9xfCEsh57zBAgLvsUjFoj0lxyl+KBLNjAbbo2S2xNpRuVDtRzdM1yXsLYpTXaSSpnLAe1eQu4036uRwDv0tnreriDSTNoxSuJpLcloqu3WngjIpfV+B6s4iPHcB+TbN3pXPuj4aLPL03fFCZy3e4fmO8poZqK0Hmqf41tbYTZsHUAwjR55SHhGjEfLv+O59VuoP0qktgzvtfTz6YazeSTYn4Q1qYn9Yid/kxR7d6e1maR0G2rUek+qX/F/FNH9gg2Rc0JKQZi9PBbqwlpNE+WnMiJAZvj/qsZK/uTOmSqorx68hiHmHI5amimPCnne6HnrrvpS3PkBGhGRk63QQchPLnkqqw3cL6K44JTs0LcESkYESdF+J0P8dRHLTc4ayLiNcNmZAWOsR4MPTe6rZEvqYA0ZXqpxfkHeyYuWTMwNQEXGU7k4StyI7ODfablNsPrngH5MHhF67IlTjrdFFhNpKd1t4hzYJq8UMeXNaJtBBpm8oy/urPrMV92l4+6XwQQbNx6pDgJe8xbhmWO1M4X8CeikyTwUoLz98AoUs4arUNBtDHrZP7A8gylJUQCMB96F2WAoS65k3qvZvKxY+SIaDjA/vjuKsAiTwIeE2+RKKIifcIHoSVjeqgDyg0="
       script:
+        - make lint
         - make test
         - make sonarscan
