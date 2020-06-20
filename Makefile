@@ -1,20 +1,32 @@
 SONAR_TOKEN?=
 GIT_BRANCH?=$(shell git rev-parse --abbrev-ref HEAD)
 
+# Other
+install:
+	pipenv install
+
+# Dev
 init:
 	pip install pipenv --upgrade
 	pipenv install --dev
 	pre-commit install
 
-install-dev:
-	pipenv install --dev
+local:
+	pipenv run python run.py
 
-install:
-	pipenv install
+clean:
+	pipenv clean
+	rm -rf .scannerwork
+	rm -rf .pytest_cache
+	rm -rf **/.pytest_cache
 
+# Code Quality
 lint:
 	pipenv run flake8
 	pipenv check ./scratch-map ./tests
+
+test:
+	pipenv run python run_tests.py
 
 sonarscan:
 	sonar-scanner \
@@ -25,11 +37,9 @@ sonarscan:
 	  -Dsonar.host.url=https://sonarcloud.io \
 	  -Dsonar.login=$(SONAR_TOKEN)
 
-test: lint
-	pipenv run python run_tests.py
+# Deployment
+build:
+	docker-compose build
 
 start:
 	docker-compose up --no-deps
-
-build:
-	docker-compose build
