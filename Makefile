@@ -27,6 +27,7 @@ sonarscan:
 	  -Dsonar.login=$(SONAR_TOKEN)
 
 test: lint
+	export APP_SETTINGS=TestingConfig; \
 	pipenv run coverage run --source scratch_map -m pytest
 	pipenv run coverage xml
 
